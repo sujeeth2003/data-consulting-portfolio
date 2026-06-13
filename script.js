@@ -51,3 +51,10 @@ for (let i = 0; i < 120; i++) {
     let relatives = cluster === 0 ? 5 : cluster === 1 ? 15 : 25;
     let socialScore = cluster === 0 ? 40 : cluster === 1 ? 65 : 80;
 
+    psychData.push({
+        relatives: randomNormal(relatives, 3),
+        socialScore: randomNormal(socialScore, 5),
+        cluster: cluster
+    });
+}
+
