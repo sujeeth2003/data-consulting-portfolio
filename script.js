@@ -13,3 +13,10 @@ for (let i = 0; i < 100; i++) {
     let pulseMean = cluster === 0 ? 65 : cluster === 1 ? 80 : 95;
     let pulseVar = cluster === 0 ? 5 : cluster === 1 ? 7 : 10;
 
+    medicalData.push({
+        pulse: randomNormal(pulseMean, pulseVar),
+        variability: randomNormal(10 + cluster*3, 2),
+        cluster: cluster
+    });
+}
+
