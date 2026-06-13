@@ -36,3 +36,18 @@ function renderMedical() {
         yaxis: {title: "Pulse Variability"}
     });
 
+    document.getElementById("medicalInsight").innerHTML =
+    "<strong>Interpretation:</strong> Three physiological clusters were identified. " +
+    "Cluster 1 shows lower resting pulse and stable variability. Cluster 3 indicates higher pulse rates " +
+    "with increased variability, potentially reflecting stress or cardiovascular response differences.";
+}
+
+// ---------------- PSYCHOLOGICAL PROJECT ----------------
+
+let psychData = [];
+for (let i = 0; i < 120; i++) {
+    let cluster = Math.floor(Math.random() * 3);
+
+    let relatives = cluster === 0 ? 5 : cluster === 1 ? 15 : 25;
+    let socialScore = cluster === 0 ? 40 : cluster === 1 ? 65 : 80;
+
