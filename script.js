@@ -74,3 +74,11 @@ function renderPsych() {
         yaxis: {title: "Behavioral/Social Score"}
     });
 
+    document.getElementById("psychInsight").innerHTML =
+    "<strong>Interpretation:</strong> Behavioral clustering suggests environmental exposure correlates with " +
+    "social conduct patterns. Higher exposure groups demonstrate increased social engagement metrics.";
+}
+
+// Render Both
+renderMedical();
+renderPsych();
