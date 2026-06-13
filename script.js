@@ -58,3 +58,19 @@ for (let i = 0; i < 120; i++) {
     });
 }
 
+function renderPsych() {
+
+    let traces = [0,1,2].map(c => ({
+        x: psychData.filter(d=>d.cluster===c).map(d=>d.relatives),
+        y: psychData.filter(d=>d.cluster===c).map(d=>d.socialScore),
+        mode: "markers",
+        type: "scatter",
+        name: "Cluster " + (c+1)
+    }));
+
+    Plotly.newPlot("psychCluster", traces, {
+        title: "Social Environment vs Behavioral Score Clustering",
+        xaxis: {title: "Number of Relatives / Social Exposure"},
+        yaxis: {title: "Behavioral/Social Score"}
+    });
+
