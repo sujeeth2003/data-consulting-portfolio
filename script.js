@@ -20,3 +20,19 @@ for (let i = 0; i < 100; i++) {
     });
 }
 
+function renderMedical() {
+
+    let traces = [0,1,2].map(c => ({
+        x: medicalData.filter(d=>d.cluster===c).map(d=>d.pulse),
+        y: medicalData.filter(d=>d.cluster===c).map(d=>d.variability),
+        mode: "markers",
+        type: "scatter",
+        name: "Cluster " + (c+1)
+    }));
+
+    Plotly.newPlot("medicalCluster", traces, {
+        title: "Pulse vs Variability Clustering",
+        xaxis: {title: "Pulse Rate"},
+        yaxis: {title: "Pulse Variability"}
+    });
+
